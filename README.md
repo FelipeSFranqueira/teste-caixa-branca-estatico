@@ -1,31 +1,38 @@
-# Teste Caixa Branca (Estático)
+# Critérios de Caixa Branca - (Grafo de Fluxo; Complexidade Ciclomática; Base de Caminhos)
 ## Descrição
-Este projeto se trata de um teste de Caixa Branca Estático realizado a partir do código da Classe `User` localizado no 
-package `login`.
+Esta etapa do projeto se trata do estudo dos critérios de Caixa Branca, visando a construção de um Grafo de Fluxo, a realização 
+do cálculo da Complexidade Ciclomática e da definição da Base de Caminhos, tudo isso realizado a partir do código da 
+Classe `User` localizado no package `login`.
 
-## Erros Encontrados
+## Numeração dos pontos do código
 
-* __Documentação descrita no código__
-  * O único tipo de documentação no código são dois pequenos comentários, e possuem pouca utilidade;
-  * Os poucos comentários presentes no código não seguem um padrão, sendo um escrito todo em letra maiúscula e outro 
-todo em letra minúscula;
-* __Nomenclatura de variáveis e constantes__
-  * A nomenclatura das variáveis não segue um padrão, possuindo algumas em português e outras em inglês;
-  * A nomenclatura de algumas variáveis não descrevem bem a sua função, por exemplo, as variáveis `e` que são Exceptions;
-* __Legibilidade e organização no código__
-  * Os atributos e métodos da classe não possuem uma ordem para declaração;
-  * O código não possui uma identação consistente;
-  * O fehcamento das chaves não segue um padrão, em alguns casos esse fechamento acontece em uma linha exclusiva já em 
-outros casos isso não acontece;
-  * A falta de espaçamento entre as linhas em alguns pontos do código atrapalha a legibilidade;
-  * Os espaçamentos não seguem um padrão, por exemplo, não há espaçamento entre a variável `nome` e a sua atribuição
-(linha 17), ja entre a variavel `result` e a sua atribuição existe espaçamento (linha18);
-* __Tratamento de nullpointers__
-  * Não existe tratamento de null pointers no código. Por exemplo, se a obtenção da conexão com o banco de dados falhar,
-a função `conectarBD()` retornará null, e isso é tratado de forma inadequada;
-* __Respeito a arquitetura utilizada__
-  * A arquitetura utilizada não foi respeitada, isso dado a falta de tratamento adequado de exceções, por exemplo;
-* __Fechamento das conexões utilizadas__
-  * O código não fecha a conexão com o banco de dados;
+Apesar da numeração dos pontos terem cido feitas dentro do código atravez de comentários, abaixo segue uma imagem com a 
+numeração mais nítida.
 
-## Ultima atualização 28/09/2023
+<img src="src/img/Extração dos dados.png"/>
+
+## Grafo de Fluxo
+Abaixo está o Grafo de Fluxo feito com base na numeração dos pontos do código.
+
+<img src="src/img/Grafo de Fluxo.png"/>
+
+## Complexidade Ciclomática
+
+O cálculo da Complexidade Ciclomática deste Grafo pode ser feita da seguinte forma:
+
+V(G) = (Arestas - Nós) + 2 <br/>
+V()G = (20 - 16) + 2 <br/>
+__V(G) = 6__
+
+## Base de Caminhos
+
+Com o cálculo da Complexidade Climática sabemos que este Grafo possui 6 caminhos, são eles:
+
+* Caminho 1 = 1; 2; 3; 4; 5; 8; 9; 10; 11; 12; 16.
+* Caminho 2 = 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12; 16.
+* Caminho 3 = 1; 2; 3; 4; 5; 6; 7; 8; 9; 19; 11; 14; 15; 16.
+* Caminho 4 = 1; 2; 3; 4; 5; 8; 9; 10; 11; 12; 13; 16.
+* Caminho 5 = 1; 2; 3; 4; 5; 8; 9; 10; 11; 12; 14; 15; 16.
+* Caminho 6 = 1; 2; 3; 4; 5; 8; 9; 10; 11; 12; 13; 14; 15; 16.
+
+## Ultima atualização 05/10/2023
